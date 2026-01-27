@@ -1,0 +1,434 @@
+
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #111827;
+  background: #ffffff;
+}
+
+a {
+  color: #ff3f79;
+  text-decoration: none;
+  font-weight: 700;
+}
+a:hover { text-decoration: underline; }
+
+/* ===== Page layout ===== */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-main {
+  width: 92vw;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 0;
+  flex: 1;
+}
+
+/* ===== Header ===== */
+.site-header {
+  background: #FFAAB4;
+  height: 110px;
+  display: flex;
+  align-items: center;
+}
+
+.header-inner {
+  width: 92vw;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap:16px;
+}
+
+.brand img {
+  height: 72px;
+  width: auto;
+  display: block;
+}
+.brand-title img {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+
+/* ===== Footer (WHITE text) ===== */
+.site-footer {
+  background: #FFAAB4;
+  padding: 22px 0;
+  margin-top: 22px;
+}
+
+.footer-inner {
+  width: 92vw;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 18px;
+  font-size: 13px;
+  color: #ffffff;
+}
+
+.footer-col h4 {
+  margin: 0 0 12px;
+  font-size: 13px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.footer-col p {
+  margin: 7px 0;
+  color: rgba(255,255,255,0.95);
+}
+
+.footer-bottom {
+  width: 92vw;
+  max-width: 1100px;
+  margin: 14px auto 0;
+  text-align: center;
+  font-size: 12px;
+  color: rgba(255,255,255,0.95);
+}
+
+@media (max-width: 850px){
+  .footer-inner { grid-template-columns: 1fr; }
+}
+
+/* ===== Card ===== */
+.card {
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(17,24,39,0.12);
+  border-radius: 22px;
+  padding: 30px;
+  box-shadow: 0 16px 50px rgba(0,0,0,0.12);
+  width:420px;
+  max-width: 720px;
+}
+
+/* ===== Titles (center) ===== */
+.title {
+  margin: 0 0 10px;
+  font-size: 28px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.subtitle {
+  margin: 0 0 28px;
+  color: rgba(17,24,39,0.70);
+  font-size: 14px;
+  text-align: center;
+}
+
+/* ===== Fields spacing ===== */
+.field {
+  display: grid;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+label {
+  font-size: 13px;
+  color: rgba(17,24,39,0.72);
+  font-weight: 600;
+}
+
+input {
+  padding: 13px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(17,24,39,0.12);
+  background: #fff;
+  outline: none;
+  font-size: 14px;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+input:focus {
+  border-color: rgba(255,63,121,0.45);
+  box-shadow: 0 0 0 4px rgba(255,63,121,0.14);
+}
+
+/* ===== Two columns for first/last name ===== */
+.inline2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+@media (max-width: 520px){
+  .inline2 { grid-template-columns: 1fr; }
+}
+
+/* ===== Helper text ===== */
+.helper {
+  margin-top: 24px;
+  font-size: 13px;
+  color: rgba(17,24,39,0.72);
+  text-align: center;
+}
+
+/* ===== Buttons spacing ===== */
+.btn {
+  width: 100%;
+  padding: 13px 14px;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  font-weight: 800;
+  background: #ff5c8a;
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(255,63,121,0.22);
+  transition: 0.12s;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.btn:hover { background: #ff3f79; }
+.btn:active { transform: translateY(1px); }
+
+.btn.secondary {
+  background: #ffffff;
+  color: #ff3f79;
+  border: 1px solid rgba(255,63,121,0.35);
+  box-shadow: none;
+  margin-top: 12px;
+}
+
+.btn.secondary:hover { background: rgba(255,63,121,0.08); }
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  width: 92vw;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+  padding: 44px 0;
+}
+
+/* ===== Index hero (background image) ===== */
+
+.hero {
+  min-height: calc(100vh - 76px - 190px);
+  border-radius: 22px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+ 
+}
+
+.hero-copy { max-width: 560px; }
+
+.hero-copy h1 {
+  margin: 0 0 14px;
+  font-size: 48px;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+}
+
+.hero-copy p {
+ font-style: italic;
+  margin: 0;
+  color: rgba(17,24,39,0.70);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.hero-actions {
+  margin-top: 18px;
+  max-width: 340px;
+  display: grid;
+  gap: 12px;
+}
+
+@media (max-width: 900px){
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-copy h1 { font-size: 38px; }
+}
+
+/* ===== HomePage split video ===== */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  align-items: stretch;
+  min-height: 720px;
+}
+
+.videoBox {
+      min-height: 450px;
+height:450px;
+width:120%;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(17,24,39,0.12);
+  box-shadow: 0 16px 50px rgba(0,0,0,0);
+}
+
+.videoBox video {
+          object-fit: cover;
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 900px){
+  .split { grid-template-columns: 1fr; }
+  .videoBox { min-height: 260px; }
+}
+
+/* ===== Avatar (Centered & FIRST) ===== */
+.preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.preview img {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ff5c8a;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(255,63,121,0.25);
+}
+
+.preview .small {
+  margin-top: 10px;
+  font-size: 12px;
+  color: rgba(17,24,39,0.65);
+}
+
+/* Make preview appear first inside signup form */
+#signupForm {
+  display: flex;
+  flex-direction: column;
+}
+#signupForm .preview {
+  order: -1;
+}
+
+/* ===== Messages ===== */
+.msg {
+  margin-top: 14px;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.msg.ok { color: #0f766e; }
+.msg.err { color: #b91c1c; }
+
+/* ================================
+   Auth pages only (Login / Signup)
+   Full background between header & footer
+================================== */
+body.auth-page .page-main{
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* fills the space between header and footer */
+body.auth-page .auth-section{
+  flex: 1;
+  min-height: calc(100vh - 110px); /* header height */
+  position: relative;
+  background: url("loginsignup.PNG") center/cover no-repeat; 
+  display: flex;
+}
+
+/* optional overlay for readability */
+body.auth-page .auth-section::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(255,255,255,0.45);
+}
+
+/* keeps same width as header/footer and keeps content LEFT */
+body.auth-page .auth-inner{
+  position: relative;
+  z-index: 1;
+  width: 92vw;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* IMPORTANT: override split ONLY on auth pages */
+body.auth-page .split{
+  display: flex;   /* stops 2-column grid on login/signup */
+  width: 100%;
+  min-height: 100%;
+  gap: 0;
+}
+
+body.auth-page .site-footer{
+margin-top :0;}
+
+
+
+/* ===== Home icon in header (Login / Signup only) ===== */
+.auth-page .home-link{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  margin-right: 12px;
+
+  background: rgba(255,255,255,0.85);
+  border: 1.5px solid rgba(255,92,138,0.45);
+  box-shadow: 0 6px 16px rgba(255,63,121,0.15);
+  transition: background 0.15s ease, transform 0.15s ease;
+
+}
+
+.auth-page .home-link:hover{
+  background: rgba(255,92,138,0.10);
+  transform: translateY(-1px);
+}
+
+/* icon image itself */
+.auth-page .home-link img{
+  width: 30px;
+  height: 30px;
+  display: block;
+}
