@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HerBite | User Page</title>
+
+  <link rel="stylesheet" href="stylesheet.css" />
+  <script src="Script.js" defer></script>
+</head>
+
+<body class="user-page">
+  <main class="page">
+
+    <header class="site-header">
+      <div class="header-inner">
+
+        <div class="brand">
+          <img src="logo.jpg" alt="HerBite Logo">
+        </div>
+
+        <div class="brand-title">
+          <img src="title.jpg" alt="HerBite Title">
+        </div>
+
+        <div class="header-right">
+          <div class="welcome">
+            Welcome <span class="name">Joud</span>
+          </div>
+
+          <div class="logout">
+            <a href="index.html">Log-out</a>
+          </div>
+        </div>
+
+      </div>
+    </header>
+
+    <section class="card">
+      <div class="big-box">
+        <div class="bar-left">
+          <h2 class="bar-title">My Information</h2>
+          <p><strong>Name</strong><br>Joud Almutairy</p>
+          <p><strong>Email address</strong><br>jood@example.com</p>
+        </div>
+
+        <div class="bar-right">
+          <div class="user-photo-box">
+            <img src="avatar.png" alt="User photo">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="big-box">
+        <div class="bar-left">
+          <h2 class="bar-title"><a href="my-recipes.html">My Recipes</a></h2>
+          <p><strong>Total Recipes:</strong> 15</p>
+          <p><strong>Total Likes:</strong> 132</p>
+        </div>
+        <div class="bar-right"></div>
+      </div>
+    </section>
+
+    <section class="box">
+      <div class="section-head">
+        <h2>All Available Recipes</h2>
+
+        <div class="filter">
+          <select>
+            <option>All Categories</option>
+            <option>Inner Glow</option>
+            <option>Outer Glow</option>
+            <option>Healthy Snacks</option>
+          </select>
+          <button class="btn-filter" type="button">Filter</button>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Recipe Name</th>
+            <th>Recipe Photo</th>
+            <th>Recipe Creator</th>
+            <th>Number of Likes</th>
+            <th>Category</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><a href="view-recipe.html">Berry Yogurt Glow Bowl</a></td>
+            <td><img src="berry yogurt.jpeg" alt="Recipe photo" class="recipe-img"></td>
+            <td>Lama</td>
+            <td>40</td>
+            <td>Inner Glow</td>
+          </tr>
+
+          <tr>
+            <td><a href="view-recipe.html">Iron Boost Spinach Salad</a></td>
+            <td><img src="spinach salad.jpeg" alt="Recipe photo" class="recipe-img"></td>
+            <td>Reem</td>
+            <td>22</td>
+            <td>Inner Glow</td>
+          </tr>
+
+          <tr>
+            <td><a href="view-recipe.html">Avocado Glow Toast</a></td>
+            <td><img src="avocado toast.jpeg" alt="Recipe photo" class="recipe-img"></td>
+            <td>Lama</td>
+            <td>61</td>
+            <td>Outer Glow</td>
+          </tr>
+
+          <tr>
+            <td><a href="view-recipe.html">Date Cocoa Energy Bites</a></td>
+            <td><img src="date bites.jpeg" alt="Recipe photo" class="recipe-img"></td>
+            <td>Joud</td>
+            <td>29</td>
+            <td>Outer Glow</td>
+          </tr>
+
+          <tr>
+            <td><a href="view-recipe.html">Skin Boost Nut Mix</a></td>
+            <td><img src="nut mix.jpeg" alt="Recipe photo" class="recipe-img"></td>
+            <td>Reem</td>
+            <td>25</td>
+            <td>Outer Glow</td>
+          </tr>
+
+          <tr>
+            <td><a href="view-recipe.html">Banana Oat Cookies</a></td>
+            <td><img src="banana oat cookies.jpeg" alt="Recipe photo" class="recipe-img"></td>
+            <td>Leen</td>
+            <td>18</td>
+            <td>Healthy Snacks</td>
+          </tr>
+
+          <tr>
+            <td><a href="view-recipe.html">Peanut Butter Energy Balls</a></td>
+            <td><img src="peanut butter balls.jpeg" alt="Recipe photo" class="recipe-img"></td>
+            <td>Leen</td>
+            <td>15</td>
+            <td>Healthy Snacks</td>
+          </tr>
+
+          <tr>
+            <td><a href="view-recipe.html">Apple Cinnamon Snack Bites</a></td>
+            <td><img src=" apple cinnamon.jpeg" alt="Recipe photo" class="recipe-img"></td>
+            <td>Joud</td>
+            <td>20</td>
+            <td>Healthy Snacks</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="box">
+      <h2>My Favourite Recipes ♥</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Recipe Name</th>
+            <th>Recipe Photo</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><a href="view-recipe.html">Avocado Glow Toast</a></td>
+            <td><img src="avocado toast.jpeg" alt="Recipe photo" class="recipe-img"></td>
+            <td><a class="remove-link" href="user.html">Remove</a></td>
+          </tr>
+
+          <tr>
+            <td><a href="view-recipe.html">Date Cocoa Energy Bites</a></td>
+            <td><img src="date bites.jpeg" alt="Recipe photo" class="recipe-img"></td>
+            <td><a class="remove-link" href="user.html">Remove</a></td>
+          </tr>
+
+          <tr>
+            <td><a href="view-recipe.html">Banana Oat Cookies</a></td>
+            <td><img src="banana oat cookies.jpeg" alt="Recipe photo" class="recipe-img"></td>
+            <td><a class="remove-link" href="user.html">Remove</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner" style="color:white">
+      <div class="footer-col">
+        <h4>Services</h4>
+        <p>Healthy Recipes</p>
+        <p>Quick Meals</p>
+        <p>Balanced Plates</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Locations</h4>
+        <p>Riyadh</p>
+        <p>Jeddah</p>
+        <p>Dammam</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <p>+966 5X XXX XXXX</p>
+        <p>herbite@email.com</p>
+        <p>@HerBite</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom" style="color:white">
+      © 2026 HerBite. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
