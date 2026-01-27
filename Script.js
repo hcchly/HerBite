@@ -22,3 +22,6 @@ if (loginForm) {
     window.location.href = "admin.html";
   });
 }
+
+console.log("User Page loaded (Phase 1).");
+// Category filtering will be implemented in Phase 2.
