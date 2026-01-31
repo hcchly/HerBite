@@ -443,7 +443,7 @@ margin-top :0;}
 }
 
 /* ================================
-   Admin Page - Phase 1
+   Admin Page 
 ================================ */
 
 .admin-top{
@@ -458,9 +458,7 @@ margin-top :0;}
   font-size: 16px;
 }
 
-.logout-link{
-  font-size: 14px;
-}
+
 
 .admin-card{
   background: rgba(255,255,255,0.95);
@@ -1721,6 +1719,7 @@ body.user-page .logout{
   top:50%;
   transform:translateY(-50%);
 }
+
 body.user-page .logout a{
   color:#fff;
   font-weight:800;
@@ -1926,3 +1925,19 @@ body.user-page .footer-bottom{
   body.user-page .btn-filter{ width:100%; }
   body.user-page .recipe-img{ width:120px; height:120px; }
 }
+
+.logout{
+  text-align:right;
+font-size: 20px;
+  color: #c43a64;
+  text-decoration: none;
+   margin-left:450px;
+   font-style:italic;
+
+}
+
+.logout a{
+ color:#fff;
+  font-weight:800;
+}
+.logout a:hover{ opacity:.85; }
