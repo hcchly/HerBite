@@ -250,7 +250,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
  
   if (!tabs.length || !steps.length || !prevBtn || !nextBtn || !submitBtn) return;
-  
+ 
   if (!document.querySelector(".er-tab")) return;
 
   let currentEdit = 0;

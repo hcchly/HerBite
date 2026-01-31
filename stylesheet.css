@@ -915,15 +915,22 @@ margin-top :0;}
 }
 
 .mr-add{
-  background:#ff5c8a;
-  color:#fff;
+  background:#ffd6dc;
+  color:#111827;
   padding:10px 14px;
   border-radius:12px;
   font-weight:600;
   font-size:14px;
   text-decoration:none;
+  transition:0.2s;
+  border:1px solid #fbcfe8;
 }
-.mr-add:hover{ background:#ff3f79; }
+
+.mr-add:hover{
+  background:#fbcfe8;
+}
+
+
 
 .mr-card{
   background:#fff;
@@ -1347,7 +1354,7 @@ button:hover{
 .ar-btn-primary:hover{ filter:brightness(0.97); }
 
 
-#submitBtn{ display:none; }
+
 
 /* responsive */
 @media (max-width: 820px){
