@@ -1633,14 +1633,16 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Arial, sans-serif; }
 
 /* =========================
-   USER PAGE
+   USER PAGE 
 ========================= */
 
+/* Page background */
 body.user-page{
   background:#FFF1F5;
   color:#111827;
 }
 
+/* Links */
 body.user-page a{
   color:#ff3f79;
   text-decoration:none;
@@ -1648,7 +1650,7 @@ body.user-page a{
 }
 body.user-page a:hover{ text-decoration:underline; }
 
-
+/* Layout */
 body.user-page .page{
   min-height:100vh;
   display:flex;
@@ -1663,6 +1665,7 @@ body.user-page .page-main{
   flex:1;
 }
 
+
 body.user-page .site-header{
   background:#FFAAB4;
   height:110px;
@@ -1673,27 +1676,52 @@ body.user-page .site-header{
 body.user-page .header-inner{
   width:92vw;
   max-width:1100px;
-  margin:0 ;
+  margin:0 auto;
   display:flex;
-  padding-left: 60px;
   align-items:center;
+  justify-content:flex-start;
   gap:16px;
   position:relative;
 }
 
+/* Home icon (same style used in auth/admin) */
+body.user-page .home-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  margin-right:12px;
+
+  background:rgba(255,255,255,0.85);
+  border:1.5px solid rgba(255,92,138,0.45);
+  box-shadow:0 6px 16px rgba(255,63,121,0.15);
+  transition:background 0.15s ease, transform 0.15s ease;
+}
+body.user-page .home-link:hover{
+  background:rgba(255,92,138,0.10);
+  transform:translateY(-1px);
+}
+body.user-page .home-link img{
+  width:30px;
+  height:30px;
+  display:block;
+}
+
+/* Brand + Title sizes */
 body.user-page .brand img{
   height:72px;
   width:auto;
   display:block;
 }
-
 body.user-page .brand-title img{
   height:50px;
   width:auto;
   display:block;
 }
 
-
+/* Welcome */
 body.user-page .header-right{
   margin-left:12px;
   display:flex;
@@ -1701,31 +1729,30 @@ body.user-page .header-right{
   align-items:flex-start;
   gap:4px;
 }
-
 body.user-page .welcome{
   color:#fff;
   font-weight:700;
   line-height:1.1;
 }
-
 body.user-page .welcome .name{
   color:#fff;
   font-weight:900;
 }
 
+/* Logout fixed right (no margin tricks) */
 body.user-page .logout{
   position:absolute;
   right:0;
   top:50%;
   transform:translateY(-50%);
 }
-
 body.user-page .logout a{
   color:#fff;
   font-weight:800;
   text-decoration:none;
 }
 body.user-page .logout a:hover{ opacity:.85; }
+
 
 body.user-page .card,
 body.user-page .box{
@@ -1737,6 +1764,7 @@ body.user-page .box{
   box-shadow:0 16px 50px rgba(0,0,0,0.10);
 }
 
+/* Big inner box */
 body.user-page .big-box{
   background:#FFE6EE;
   border:1px solid rgba(255,92,138,0.25);
@@ -1745,6 +1773,7 @@ body.user-page .big-box{
   display:flex;
   justify-content:space-between;
   gap:20px;
+  align-items:center;
 }
 
 body.user-page .bar-title{
@@ -1761,8 +1790,7 @@ body.user-page .big-box p{
   color:#111827;
 }
 
-body.user-page .big-box strong{ color:#111827; }
-
+/* Avatar (your photo in user info) */
 body.user-page .user-photo-box{
   width:220px;
   height:170px;
@@ -1777,6 +1805,7 @@ body.user-page .user-photo-box img{
   object-fit:cover;
   display:block;
 }
+
 
 body.user-page .section-head{
   display:flex;
@@ -1853,6 +1882,7 @@ body.user-page tbody tr:hover td{
   background:rgba(255,92,138,0.08);
 }
 
+/* Recipe image inside tables */
 body.user-page .recipe-img{
   width:180px;
   height:180px;
@@ -1862,13 +1892,14 @@ body.user-page .recipe-img{
   box-shadow:0 10px 18px rgba(0,0,0,0.08);
 }
 
-
+/* Remove link */
 body.user-page .remove-link{
   color:#ff3f79;
   font-weight:900;
   text-decoration:none;
 }
 body.user-page .remove-link:hover{ text-decoration:underline; }
+
 
 body.user-page .site-footer{
   background:#FFAAB4;
@@ -1910,7 +1941,7 @@ body.user-page .footer-bottom{
 }
 
 @media (max-width:900px){
-  body.user-page .big-box{ flex-direction:column; }
+  body.user-page .big-box{ flex-direction:column; align-items:flex-start; }
   body.user-page .user-photo-box{ width:240px; height:180px; }
   body.user-page .recipe-img{ width:140px; height:140px; }
 }
@@ -1925,19 +1956,3 @@ body.user-page .footer-bottom{
   body.user-page .btn-filter{ width:100%; }
   body.user-page .recipe-img{ width:120px; height:120px; }
 }
-
-.logout{
-  text-align:right;
-font-size: 20px;
-  color: #c43a64;
-  text-decoration: none;
-   margin-left:450px;
-   font-style:italic;
-
-}
-
-.logout a{
- color:#fff;
-  font-weight:800;
-}
-.logout a:hover{ opacity:.85; }
