@@ -1684,7 +1684,7 @@ body.user-page .header-inner{
   position:relative;
 }
 
-/* Home icon (same style used in auth/admin) */
+/* Home icon  */
 body.user-page .home-link{
   display:inline-flex;
   align-items:center;
@@ -1739,7 +1739,7 @@ body.user-page .welcome .name{
   font-weight:900;
 }
 
-/* Logout fixed right (no margin tricks) */
+
 body.user-page .logout{
   position:absolute;
   right:0;
@@ -1790,7 +1790,7 @@ body.user-page .big-box p{
   color:#111827;
 }
 
-/* Avatar (your photo in user info) */
+
 body.user-page .user-photo-box{
   width:220px;
   height:170px;
