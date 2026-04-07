@@ -1,23 +1,15 @@
-
-
 <?php
 session_start();
 include("db.php");
 
-if (!isset($_SESSION['id']) || !isset($_SESSION['userType'])) {
-    header("Location: login.php?error=Please login first");
-    exit();
-}
-
-if ($_SESSION['userType'] != "admin") {
-    header("Location: login.php?error=Access denied");
-    exit();
-}
+/* Temporary session for testing until login is finished */
+$_SESSION['id'] = 1;
+$_SESSION['userType'] = "admin";
 
 $adminID = $_SESSION['id'];
 
 /* Get admin info */
-$adminQuery = "SELECT * FROM User WHERE id = ?";
+$adminQuery = "SELECT * FROM users WHERE id = ?";
 $stmt = $conn->prepare($adminQuery);
 $stmt->bind_param("i", $adminID);
 $stmt->execute();
@@ -30,20 +22,20 @@ if ($adminResult->num_rows == 0) {
 $admin = $adminResult->fetch_assoc();
 
 /* Get reported recipes */
-$reportsQuery = "SELECT Report.id AS reportID,
-                        Recipe.id AS recipeID,
-                        Recipe.name AS recipeName,
-                        User.id AS creatorID,
-                        User.firstName,
-                        User.lastName,
-                        User.photoFileName
-                 FROM Report
-                 JOIN Recipe ON Report.recipeID = Recipe.id
-                 JOIN User ON Recipe.userID = User.id";
+$reportsQuery = "SELECT report.id AS reportID,
+                        recipe.id AS recipeID,
+                        recipe.name AS recipeName,
+                        users.id AS creatorID,
+                        users.firstName,
+                        users.lastName,
+                        users.photoFileName
+                 FROM report
+                 JOIN recipe ON report.recipeID = recipe.id
+                 JOIN users ON recipe.userID = users.id";
 $reportsResult = $conn->query($reportsQuery);
 
 /* Get blocked users */
-$blockedQuery = "SELECT * FROM BlockedUser";
+$blockedQuery = "SELECT * FROM blockeduser";
 $blockedResult = $conn->query($blockedQuery);
 ?>
 
@@ -62,7 +54,7 @@ $blockedResult = $conn->query($blockedQuery);
   <header class="site-header">
     <div class="header-inner">
 
-      <a href="index.php" class="home-link" aria-label="Go to home">
+      <a href="index.html" class="home-link" aria-label="Go to home">
         <img src="home.PNG" alt="Home">
       </a>
 
@@ -79,7 +71,7 @@ $blockedResult = $conn->query($blockedQuery);
       </div>
 
       <div class="logout">
-        <a href="signout.php">Sign-out</a>
+        <a href="index.html">Sign-out</a>
       </div>
     </div>
   </header>
@@ -98,7 +90,9 @@ $blockedResult = $conn->query($blockedQuery);
           </div>
 
           <div class="label">Email address</div>
-          <div class="value"><?php echo $admin['emailAddress']; ?></div>
+          <div class="value">
+            <?php echo $admin['emailAddress']; ?>
+          </div>
         </div>
       </div>
     </section>
@@ -107,7 +101,7 @@ $blockedResult = $conn->query($blockedQuery);
     <section class="admin-card">
       <h2>Reported Recipes</h2>
 
-      <?php if ($reportsResult->num_rows > 0) { ?>
+      <?php if ($reportsResult && $reportsResult->num_rows > 0) { ?>
       <table class="admin-table">
         <thead>
           <tr>
@@ -128,7 +122,7 @@ $blockedResult = $conn->query($blockedQuery);
 
             <td>
               <div class="creator-cell">
-                <img src="images/<?php echo $report['photoFileName']; ?>" alt="Creator photo" class="creator-avatar square">
+                <img src="<?php echo $report['photoFileName']; ?>" alt="Creator photo" class="creator-avatar square">
                 <span class="name">
                   <?php echo $report['firstName'] . " " . $report['lastName']; ?>
                 </span>
@@ -139,10 +133,9 @@ $blockedResult = $conn->query($blockedQuery);
               <form class="action-form" action="handleReportAction.php" method="post">
                 <input type="hidden" name="reportID" value="<?php echo $report['reportID']; ?>">
                 <input type="hidden" name="recipeID" value="<?php echo $report['recipeID']; ?>">
-      <input type="hidden" name="creatorID" value="<?php echo $report['creatorID']; ?>">
+                <input type="hidden" name="creatorID" value="<?php echo $report['creatorID']; ?>">
 
-                <label>
-                  <input type="radio" name="action" value="block" required> Block User
+                <label><input type="radio" name="action" value="block" required> Block User
                 </label>
                 <label>
                   <input type="radio" name="action" value="dismiss" required> Dismiss Report
@@ -163,7 +156,7 @@ $blockedResult = $conn->query($blockedQuery);
     <section class="admin-card">
       <h2>Blocked Users List</h2>
 
-      <?php if ($blockedResult->num_rows > 0) { ?>
+      <?php if ($blockedResult && $blockedResult->num_rows > 0) { ?>
       <table class="admin-table">
         <thead>
           <tr>

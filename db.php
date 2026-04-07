@@ -1,10 +1,10 @@
 <?php
 $host = "localhost";
 $username = "root";
-$password = "";
-$database = "herbite_db";
+$password = "root";
+$database = "herbits_db";
 
-$conn = new mysqli($host, $username, $password, $database);
+$conn = new mysqli($host, $username, $password, $database,8888);
 
 // Check connection
 if ($conn->connect_error) {
