@@ -188,7 +188,7 @@ $userPhoto = !empty($user['photoFileName']) ? $user['photoFileName'] : 'avatar.p
               <?php while ($row = mysqli_fetch_assoc($result_recipes)) { ?>
                 <tr>
                   <td>
-                    <a href="viewRecipe.php?id=<?php echo (int) $row['id']; ?>">
+                    <a href="viewRecipes.php?id=<?php echo (int) $row['id']; ?>">
                       <?php echo htmlspecialchars($row['name']); ?>
                     </a>
                   </td>
@@ -231,7 +231,7 @@ $userPhoto = !empty($user['photoFileName']) ? $user['photoFileName'] : 'avatar.p
               <?php while ($fav = mysqli_fetch_assoc($result_favourites)) { ?>
                 <tr>
                   <td>
-                    <a href="viewRecipe.php?id=<?php echo (int) $fav['id']; ?>">
+                    <a href="viewRecipes.php?id=<?php echo (int) $fav['id']; ?>">
                       <?php echo htmlspecialchars($fav['name']); ?>
                     </a>
                   </td>
